@@ -1,4 +1,7 @@
-templates/
+acmp/
+
+*a.exe
+*/temp.*
 
 timus.ru/best.md
 timus.ru/sort_files.py
