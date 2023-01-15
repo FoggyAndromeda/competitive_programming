@@ -3,7 +3,7 @@
 //! UNCHECKED
 
 using namespace std;
-using ui64 = int64_t;
+using ui64 = uint64_t;
 using piu = pair<int, ui64>;
 
 const int mod = 1e9 + 7;
@@ -49,7 +49,7 @@ struct Hash
         n = s.size();
         h.assign(n, {s[0], s[0]});
         for (int i = 1; i < n; ++i)
-            h[i] = h[i] * powers[1] + piu{s[i], s[i]};
+            h[i] = h[i - 1] * powers[1] + piu{s[i], s[i]};
     }
 
     piu sub(int l, int r)

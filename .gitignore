@@ -1,7 +1,9 @@
 acmp/
 
 *a.exe
-*/temp.*
+*temp.*
+*.in
+*.out
 
 timus.ru/best.md
 timus.ru/sort_files.py
