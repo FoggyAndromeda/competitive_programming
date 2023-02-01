@@ -1,9 +1,11 @@
 acmp/
+contests/
 
-*a.exe
+*.exe
 *temp.*
 *.in
 *.out
+*.vscode
 
-timus.ru/best.md
+timus.ru/problems.md
 timus.ru/sort_files.py

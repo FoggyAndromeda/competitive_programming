@@ -3,8 +3,9 @@
 using namespace std;
 
 template <class T = int>
-struct sqrt_decomp
+class sqrt_decomp
 {
+private:
     vector<T> d;
     vector<T> orig;
     int n, sq;
@@ -14,6 +15,7 @@ struct sqrt_decomp
         return a + b;
     };
 
+public:
     sqrt_decomp(vector<T> &a)
     {
         n = a.size();

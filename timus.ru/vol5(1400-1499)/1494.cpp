@@ -3,7 +3,7 @@
 using namespace std;
 
 template <class T = int>
-class segtree
+struct segtree
 {
     vector<T> t;
     int n;
@@ -11,6 +11,19 @@ class segtree
     {
         return a + b;
     };
+
+    segtree(vector<T> a)
+    {
+        n = a.size();
+        t.assign(4 * n, 0);
+        build(1, 0, n - 1, a);
+    }
+
+    segtree(int k)
+    {
+        n = k;
+        t.assign(4 * n, 0);
+    }
 
     void build(int v, int l, int r, vector<T> &a)
     {
@@ -23,20 +36,6 @@ class segtree
         build(2 * v, l, m, a);
         build(2 * v + 1, m + 1, r, a);
         t[v] = f(t[2 * v], t[2 * v + 1]);
-    }
-
-public:
-    segtree(vector<T> a)
-    {
-        n = a.size();
-        t.assign(4 * n, 0);
-        build(1, 0, n - 1, a);
-    }
-
-    segtree(int k = 100'001)
-    {
-        n = k;
-        t.assign(4 * n, 0);
     }
 
     void add(int i, int d, int v = 1, int l = 0, int r = -1)
@@ -96,4 +95,23 @@ public:
 
 int main()
 {
+    int n;
+    cin >> n;
+    segtree<int> st(n + 1);
+    int maximum = 0;
+    bool possible = true;
+    for (int i = 0; i < n; ++i)
+    {
+        int now;
+        cin >> now;
+        if (now > maximum)
+            maximum = now;
+        else if (st.rq(now, maximum) == maximum - now - 1)
+            possible = false;
+        st.upd(now, 1);
+    }
+    if (possible)
+        cout << "Not a proof\n";
+    else
+        cout << "Cheater\n";
 }

@@ -3,11 +3,20 @@
 using namespace std;
 
 template <class T = int>
-struct FenwickTree
+class FenwickTree
 {
+private:
     vector<T> t;
     int n;
 
+    T rq(int l, int r)
+    {
+        if (l == 0)
+            return pref(r);
+        return pref(r) - pref(l - 1);
+    }
+
+public:
     FenwickTree(vector<T> &a)
     {
         n = a.size() + 1;
@@ -28,13 +37,6 @@ struct FenwickTree
         for (++i; i > 0; i -= i & -i)
             res = res + t[i];
         return res;
-    }
-
-    T rq(int l, int r)
-    {
-        if (l == 0)
-            return pref(r);
-        return pref(r) - pref(l - 1);
     }
 
     void upd(int i, T nw)

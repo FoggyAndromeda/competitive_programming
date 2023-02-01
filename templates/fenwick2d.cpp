@@ -3,11 +3,22 @@
 using namespace std;
 
 template <class T = int>
-struct FenwickTree
+class FenwickTree
 {
+private:
     vector<vector<T>> t;
     int n, m;
 
+    T pref(int r, int c)
+    {
+        T res = 0;
+        for (int i = r + 1; i > 0; i -= i & -i)
+            for (int j = c + 1; j > 0; j -= j & -j)
+                res = res + t[i][j];
+        return res;
+    }
+
+public:
     FenwickTree(vector<vector<T>> &a)
     {
         n = a.size() + 1;
@@ -23,15 +34,6 @@ struct FenwickTree
         n = r + 1;
         m = c + 1;
         t.assign(n, vector<T>(m, 0));
-    }
-
-    T pref(int r, int c)
-    {
-        T res = 0;
-        for (int i = r + 1; i > 0; i -= i & -i)
-            for (int j = c + 1; j > 0; j -= j & -j)
-                res = res + t[i][j];
-        return res;
     }
 
     T rq(int r1, int c1, int r2, int c2)

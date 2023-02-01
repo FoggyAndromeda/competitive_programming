@@ -39,11 +39,13 @@ vector<piu> powers = []()
     return res;
 }();
 
-struct Hash
+class Hash
 {
+private:
     vector<piu> h;
     int n;
 
+public:
     Hash(const string &s)
     {
         n = s.size();

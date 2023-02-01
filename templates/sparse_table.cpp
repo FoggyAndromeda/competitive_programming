@@ -3,15 +3,18 @@
 using namespace std;
 
 template <class T = int>
-struct sparse_table
+class sparse_table
 {
+private:
     vector<vector<T>> t;
     int n, lgn;
+
     function<T(T, T)> f = [](T a, T b)
     {
         return min(a, b);
     };
 
+public:
     sparse_table(vector<T> &a)
     {
         n = a.size();
