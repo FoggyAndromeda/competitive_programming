@@ -14,10 +14,12 @@ vector<int> primes = []()
             for (i64 j = i * i; j < maxn; j += i)
                 prime[j] = false;
     vector<int> res;
+    res.reserve(maxn / 32);
     for (int i = 0; i < maxn; ++i)
         if (prime[i])
             res.push_back(i);
-    return res;
+    res.shrink_to_fit();
+    return move(res);
 }();
 
 int main()

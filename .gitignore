@@ -6,6 +6,7 @@ contests/
 *.in
 *.out
 *.vscode
+*.todo
 
 timus.ru/problems.md
 timus.ru/sort_files.py
