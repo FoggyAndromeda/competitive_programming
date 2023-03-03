@@ -2,18 +2,14 @@
 
 using namespace std;
 
-template <class T = int>
+template <class T, class Func>
 class sqrt_decomp
 {
 private:
     vector<T> d;
     vector<T> orig;
     int n, sq;
-
-    function<T(T, T)> f = [](T a, T b)
-    {
-        return a + b;
-    };
+    Func f;
 
 public:
     sqrt_decomp(vector<T> &a)

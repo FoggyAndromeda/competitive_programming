@@ -2,17 +2,14 @@
 
 using namespace std;
 
-template <class T = int>
+template <class T, class Func>
 class sparse_table
 {
 private:
     vector<vector<T>> t;
     int n, lgn;
 
-    function<T(T, T)> f = [](T a, T b)
-    {
-        return min(a, b);
-    };
+    Func f;
 
 public:
     sparse_table(vector<T> &a)

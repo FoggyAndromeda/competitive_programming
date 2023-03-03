@@ -2,15 +2,12 @@
 
 using namespace std;
 
-template <class T = int>
+template <class T, class Func>
 class segtree
 {
     vector<T> t;
     int n;
-    function<T(T, T)> f = [](T a, T b)
-    {
-        return a + b;
-    };
+    Func f;
 
     void build(int v, int l, int r, vector<T> &a)
     {

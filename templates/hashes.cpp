@@ -27,9 +27,9 @@ piu operator*(piu a, piu b)
 vector<piu> powers = []()
 {
     mt19937 gen(chrono::high_resolution_clock::now().time_since_epoch().count());
-    int p = 2 * uniform_int_distribution<int>(mod / 4, (mod - 10) / 4)(gen) + 1;
+    int p = 2 * uniform_int_distribution<int>(mod / 4, (mod - 10) / 2)(gen) + 1;
 
-    vector<piu> res;
+    vector<piu> res(maxn);
     res[0] = {1, 1};
     res[1] = {p, p};
 
