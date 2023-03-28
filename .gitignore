@@ -1,6 +1,4 @@
-acmp/
 contests/
-codeforces/
 
 *.exe
 *temp.*
@@ -8,6 +6,6 @@ codeforces/
 *.out
 *.vscode
 *.todo
+*.txt
 
-timus.ru/problems.md
-timus.ru/sort_files.py
+*sort_files*

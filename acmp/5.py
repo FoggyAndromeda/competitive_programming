@@ -1,0 +1,7 @@
+n = int(input())
+a = list(map(int, input().split()))
+b = list(filter(lambda x : x & 1, a))
+c = list(filter(lambda x : not (x & 1), a))
+print(*b)
+print(*c)
+print("YES" if len(c) >= len(b) else "NO")
