@@ -1,7 +1,3 @@
-#include <bits/stdc++.h>
-
-using namespace std;
-
 template <class T>
 class FenwickTree
 {
@@ -85,7 +81,3 @@ public:
         return rq(i, i);
     }
 };
-
-int main()
-{
-}

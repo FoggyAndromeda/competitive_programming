@@ -1,6 +1,3 @@
-#include <bits/stdc++.h>
-
-using namespace std;
 
 // length of longest suffix equal to prefix
 vector<int> prefixf(string &s)
@@ -17,8 +14,4 @@ vector<int> prefixf(string &s)
         res[i] = j;
     }
     return res;
-}
-
-int main()
-{
 }

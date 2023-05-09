@@ -1,6 +1,3 @@
-#include <bits/stdc++.h>
-
-using namespace std;
 using i64 = int64_t;
 
 const int maxn = 1e6 + 1;
@@ -19,9 +16,5 @@ vector<int> primes = []()
         if (prime[i])
             res.push_back(i);
     res.shrink_to_fit();
-    return move(res);
+    return res;
 }();
-
-int main()
-{
-}

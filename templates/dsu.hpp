@@ -1,9 +1,3 @@
-#include <bits/stdc++.h>
-
-using namespace std;
-
-// !UNCHECKED
-
 class DSU
 {
 private:
@@ -50,7 +44,3 @@ public:
         return ans.size();
     }
 };
-
-int main()
-{
-}

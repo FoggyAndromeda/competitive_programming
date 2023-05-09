@@ -1,7 +1,3 @@
-#include <bits/stdc++.h>
-
-using namespace std;
-
 //! CHECKED?
 
 int ford_fulkerson(vector<vector<int>> &c)
@@ -50,8 +46,4 @@ int ford_fulkerson(vector<vector<int>> &c)
         if (c[0][i] != 0)
             result += flows[0][i];
     return result;
-}
-
-int main()
-{
 }

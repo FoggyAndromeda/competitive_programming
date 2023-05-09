@@ -1,7 +1,3 @@
-#include <bits/stdc++.h>
-
-using namespace std;
-
 template <class T, class Func>
 class sqrt_decomp
 {
@@ -44,7 +40,3 @@ public:
         return res;
     }
 };
-
-int main()
-{
-}

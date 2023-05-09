@@ -1,7 +1,3 @@
-#include <bits/stdc++.h>
-
-using namespace std;
-
 template <class T = int>
 class FenwickTree
 {
@@ -59,7 +55,3 @@ public:
                 t[i][j] += d;
     }
 };
-
-int main()
-{
-}

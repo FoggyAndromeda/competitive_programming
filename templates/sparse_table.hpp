@@ -1,7 +1,3 @@
-#include <bits/stdc++.h>
-
-using namespace std;
-
 template <class T, class Func>
 class sparse_table
 {
@@ -32,7 +28,3 @@ public:
         return f(t[lgd][l], t[lgd][r - (1 << lgd)]);
     }
 };
-
-int main()
-{
-}

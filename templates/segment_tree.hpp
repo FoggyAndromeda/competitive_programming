@@ -1,7 +1,3 @@
-#include <bits/stdc++.h>
-
-using namespace std;
-
 template <class T, class Func>
 class segtree
 {
@@ -26,17 +22,17 @@ public:
     segtree(vector<T> a)
     {
         n = a.size();
-        t.assign(4 * n, 0);
+        t.assign(4 * n, f.neutral);
         build(1, 0, n - 1, a);
     }
 
     segtree(int k = 100'001)
     {
         n = k;
-        t.assign(4 * n, 0);
+        t.assign(4 * n, f.neutral);
     }
 
-    void add(int i, int d, int v = 1, int l = 0, int r = -1)
+    void add(int i, T d, int v = 1, int l = 0, int r = -1)
     {
         if (r == -1)
             r = n - 1;
@@ -53,7 +49,7 @@ public:
         t[v] = f(t[2 * v], t[2 * v + 1]);
     }
 
-    void upd(int i, int a, int v = 1, int l = 0, int r = -1)
+    void upd(int i, T a, int v = 1, int l = 0, int r = -1)
     {
         if (r == -1)
             r = n - 1;
@@ -77,7 +73,7 @@ public:
         if (r == -1)
             r = n - 1;
         if (ql > qr)
-            return 0;
+            return f.neutral;
         if (ql == l && qr == r)
             return t[v];
         int m = (l + r) >> 1;
@@ -90,7 +86,3 @@ public:
         return f(rq(ql, m, 2 * v, l, m), rq(m + 1, qr, 2 * v + 1, m + 1, r));
     }
 };
-
-int main()
-{
-}

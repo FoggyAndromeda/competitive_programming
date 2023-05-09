@@ -1,8 +1,3 @@
-#include <bits/stdc++.h>
-
-//! UNCHECKED
-
-using namespace std;
 using ui64 = uint64_t;
 using piu = pair<int, ui64>;
 
@@ -61,7 +56,3 @@ public:
         return h[r] - h[l - 1] * powers[r - l + 1];
     }
 };
-
-int main()
-{
-}
