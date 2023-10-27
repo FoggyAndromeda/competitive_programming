@@ -19,7 +19,7 @@ class segtree
     }
 
 public:
-    segtree(vector<T> a)
+    segtree(vector<T> &a)
     {
         n = a.size();
         t.assign(4 * n, f.neutral);
