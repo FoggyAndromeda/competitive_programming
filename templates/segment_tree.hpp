@@ -1,11 +1,12 @@
 template <class T, class Func>
 class segtree
 {
+private:
     vector<T> t;
     int n;
     Func f;
 
-    void build(int v, int l, int r, vector<T> &a)
+    void build(int v, int l, int r, const vector<T> &a)
     {
         if (l == r)
         {
@@ -19,7 +20,7 @@ class segtree
     }
 
 public:
-    segtree(vector<T> &a)
+    segtree(const vector<T> &a)
     {
         n = a.size();
         t.assign(4 * n, f.neutral);
