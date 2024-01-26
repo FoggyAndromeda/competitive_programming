@@ -24,7 +24,7 @@ public:
 
     T rq(int l, int r)
     {
-        int lgd = __lg(r - l);
+        int lgd = __lg(r - l + 1);
         return f(t[lgd][l], t[lgd][r - (1 << lgd)]);
     }
 };
